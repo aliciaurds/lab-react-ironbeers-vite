@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Noto+Sans+Display:wght@800&family=Roboto&display=swap');
+.details-container{
+    margin-top: 100px;
+}
+.nav-bar{
+    background-color: rgb(55, 169, 221);
+    padding: 20px ;
+
+}
+.nav-btn{
+    background: transparent;
+    border: none;
+}
+body{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  
+}
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.card-info h1, p{
+    padding-left: 20px ;
+    padding-right: 20px;
+}
+.card-info h3{
+    color: lightgray;
+}
+
+.description-container{
+    text-align: justify;
+    margin-right: 38% ;
+    margin-left: 38%
+}
+.att-style{
+    font-size: 20px;
+    font-weight: bold;
+    color: lightgray
+}
+.text-container{
+    text-align: justify;
+    margin-right: 26% ;
+    margin-left: 26%;
+    color: gray;
+}
+.title-container{
+    color: gray;
+    text-align: left;
+    margin-left: 27.2%;
+    
+}
