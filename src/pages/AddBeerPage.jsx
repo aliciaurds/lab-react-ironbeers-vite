@@ -4,6 +4,13 @@ import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 
+const btnStyles={
+    backgroundColor: "rgb(55, 169, 221)",
+    border: "none", 
+    paddingLeft: "167px", 
+    paddingRight: "167px" 
+}
+
 function AddBeerPage() {
   const navigate = useNavigate();
 
@@ -68,7 +75,7 @@ function AddBeerPage() {
   return (
     <div>
     <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="name">
+        <Form.Group className="mb-3 form-label" controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
@@ -77,7 +84,7 @@ function AddBeerPage() {
             onChange={handleNameChange}
           />
         </Form.Group >
-        <Form.Group className="mb-3" controlId="tagline">
+        <Form.Group className="mb-3 form-label" controlId="tagline">
           <Form.Label>Tagline</Form.Label>
           <Form.Control
             type="text"
@@ -86,7 +93,7 @@ function AddBeerPage() {
             onChange={handleTaglineChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="description">
+        <Form.Group className="mb-3 form-label" controlId="description">
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
@@ -105,7 +112,7 @@ function AddBeerPage() {
             onChange={handleImageUrlChange}
           />
         </Form.Group> */}
-        <Form.Group className="mb-3" controlId="first_brewed">
+        <Form.Group className="mb-3 form-label" controlId="first_brewed">
           <Form.Label>First Brewed</Form.Label>
           <Form.Control
             type="text"
@@ -114,7 +121,7 @@ function AddBeerPage() {
             onChange={handleFirstBrewedChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="brewers_tips">
+        <Form.Group className="mb-3 form-label" controlId="brewers_tips">
           <Form.Label>Brewer's Tips</Form.Label>
           <Form.Control
             type="text"
@@ -123,7 +130,7 @@ function AddBeerPage() {
             onChange={handleTipsChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="attenuation_level">
+        <Form.Group className="mb-3 form-label" controlId="attenuation_level">
           <Form.Label>Attenuation Level</Form.Label>
           <Form.Control
             type="number"
@@ -132,7 +139,7 @@ function AddBeerPage() {
             onChange={handleAttenuationChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="contributed_by">
+        <Form.Group className="mb-3 form-label" controlId="contributed_by">
           <Form.Label>Contributed By</Form.Label>
           <Form.Control
             type="text"
@@ -141,7 +148,7 @@ function AddBeerPage() {
             onChange={handleContributedByChange}
           />
         </Form.Group>
-        <Button variant="dark" type="submit">
+        <Button style={btnStyles} type="submit">
           Add Beer
         </Button>
       </Form>
