@@ -16,24 +16,33 @@ function AllBeersPage() {
 
   const [beerList, setBeerList] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchBeer, setSearchBeer] = useState("");
 
   useEffect(() => {
     beerData();
-  }, []);
+  }, [searchBeer]);
 
   const beerData = async () => {
     try {
-      const response = await axios.get(
-        "https://ih-beers-api2.herokuapp.com/beers"
-      );
-      console.log(response.data);
-      setBeerList(response.data);
+      let url = "https://ih-beers-api2.herokuapp.com/beers"
+      
+      if (searchBeer) {            
+        console.log(searchBeer);
+        url = `https://ih-beers-api2.herokuapp.com/beers/search?q=${searchBeer}`
+      }
+      const response = await axios.get(url);
+      // console.log(response.data);
+      setBeerList(response.data)
       setLoading(false);
     } catch (err) {
       console.log(err);
       navigate(-1);
     }
   };
+  
+  const handleQueryChange = (event) => {
+    setSearchBeer(event.target.value);
+  }
 
   if (loading) {
     return (
@@ -44,7 +53,12 @@ function AllBeersPage() {
   }
   return (
     <div style={{marginTop: "50px"}}>
-      
+      <input
+        type="text"
+        placeholder="Search"
+        onChange={handleQueryChange}
+        value={searchBeer}
+      />
         {beerList.map((eachBeer) => {
           return (
             <div style={{padding: "30px"}} key={eachBeer._id}>
